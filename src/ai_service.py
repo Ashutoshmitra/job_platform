@@ -37,7 +37,13 @@ class AIService:
         """Parse AI response text to JSON, handling potential formatting issues."""
         try:
             # Try to parse as JSON directly
-            return json.loads(response_text)
+            parsed = json.loads(response_text)
+            # Ensure it's a dictionary
+            if isinstance(parsed, dict):
+                return parsed
+            else:
+                logger.warning(f"Parsed JSON is not a dict: {type(parsed)}")
+                return {}
         except json.JSONDecodeError:
             # Try to extract JSON from markdown code blocks
             if '```json' in response_text:
@@ -45,15 +51,25 @@ class AIService:
                 end = response_text.find('```', start)
                 if end != -1:
                     json_text = response_text[start:end].strip()
-                    return json.loads(json_text)
+                    try:
+                        parsed = json.loads(json_text)
+                        if isinstance(parsed, dict):
+                            return parsed
+                    except json.JSONDecodeError:
+                        pass
             
             # Try to extract JSON from the response
             import re
             json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
             if json_match:
-                return json.loads(json_match.group())
+                try:
+                    parsed = json.loads(json_match.group())
+                    if isinstance(parsed, dict):
+                        return parsed
+                except json.JSONDecodeError:
+                    pass
             
-            logger.error(f"Could not parse AI response: {response_text}")
+            logger.error(f"Could not parse AI response as valid JSON dict: {response_text[:200]}...")
             return {}
     
     async def process_industry_batch(self) -> None:
@@ -83,6 +99,11 @@ class AIService:
             response = await self._generate_content_async(prompt, timeout=15)
             classification = self._parse_ai_response(response.text)
             
+            # Ensure classification is a dictionary
+            if not isinstance(classification, dict):
+                logger.warning(f"Classification is not a dict, got: {type(classification)}. Using default.")
+                raise ValueError("Classification response is not a dictionary")
+            
             # Apply classification to all jobs in batch
             for job in self._industry_batch:
                 job.update(classification)
@@ -92,6 +113,7 @@ class AIService:
             
         except Exception as e:
             logger.error(f"Error processing industry batch: {e}")
+            logger.error(f"Raw response was: {response.text if 'response' in locals() else 'No response'}")
             # Add default classification for failed jobs
             default_classification = {
                 "sector": "Unknown",
