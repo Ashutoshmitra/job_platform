@@ -8,6 +8,7 @@ TARGET_SCHEMA = {
     "external_job_id": {"type": str, "required": True},
     "job_source": {"type": str, "required": True, "allowed_values": ["COMPANY_WEBSITE", "JOB_FEED"]},
     "feed_id": {"type": int, "required": False, "nullable": True},
+    "job_hash": {"type": str, "required": True},
     "created_at": {"type": "datetime", "required": True},
     "updated_at": {"type": "datetime", "required": True},
     "posted_at": {"type": "datetime", "required": True},
