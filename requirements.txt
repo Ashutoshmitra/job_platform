@@ -1,6 +1,6 @@
 requests
 supabase
-google-generativeai
+httpx
 python-dotenv
 flask
 gunicorn

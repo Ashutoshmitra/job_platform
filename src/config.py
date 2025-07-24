@@ -14,8 +14,8 @@ class Config:
     SUPABASE_URL = os.getenv('SUPABASE_URL')
     SUPABASE_KEY = os.getenv('SUPABASE_KEY')
     
-    # Gemini AI Configuration
-    GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
+    # Deepseek AI Configuration
+    DEEPSEEK_API_KEY = os.getenv('DEEPSEEK_API_KEY')
     
     # Xano Configuration
     XANO_API_URL = os.getenv('XANO_API_URL')
@@ -30,7 +30,7 @@ class Config:
     def validate(cls):
         """Validate that all required environment variables are set."""
         required_vars = [
-            'SUPABASE_URL', 'SUPABASE_KEY', 'GEMINI_API_KEY',
+            'SUPABASE_URL', 'SUPABASE_KEY', 'DEEPSEEK_API_KEY',
             'XANO_API_URL', 'XANO_API_KEY'
         ]
         
