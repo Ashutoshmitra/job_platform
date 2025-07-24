@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs>
+  <job>
+    <id>deploy-test-001</id>
+    <title>DevOps Specialist</title>
+    <company>CloudTech Solutions</company>
+    <description>
+      Looking for a DevOps Specialist to manage our cloud infrastructure. 
+      Experience with AWS, Docker, and Kubernetes required. Remote work available.
+    </description>
+    <posted>2024-07-24T18:00:00Z</posted>
+    <location>Austin, TX</location>
+    <employment_type>Full-time</employment_type>
+    <apply_url>https://cloudtech.com/careers/devops</apply_url>
+    <remote>true</remote>
+    <salary_min>130000</salary_min>
+    <salary_max>170000</salary_max>
+    <currency>USD</currency>
+  </job>
+  <job>
+    <id>deploy-test-002</id>
+    <title>Machine Learning Engineer</title>
+    <company>AI Innovations</company>
+    <description>
+      Join our ML team to build intelligent systems. 
+      Python, TensorFlow, and MLOps experience required.
+    </description>
+    <posted>2024-07-24T19:00:00Z</posted>
+    <location>New York, NY</location>
+    <employment_type>Full-time</employment_type>
+    <apply_url>https://aiinnovations.com/jobs/ml-engineer</apply_url>
+    <remote>false</remote>
+    <salary_min>150000</salary_min>
+    <salary_max>200000</salary_max>
+    <currency>USD</currency>
+  </job>
+</jobs>
