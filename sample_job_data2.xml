@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs>
+  <job>
+    <id>sample-001</id>
+    <jobTitle>Junior Frontend Developer</jobTitle>
+    <company>TechStartup Inc.</company>
+    <jobDescription>
+      We're looking for a passionate Frontend Developer to join our growing team. 
+      You'll work with React, TypeScript, and modern web technologies to build 
+      amazing user experiences. Remote work available.
+    </jobDescription>
+    <posted>2024-07-24T10:00:00Z</posted>
+    <location>San Francisco, CA</location>
+    <employment_type>Full-time</employment_type>
+    <apply_url>https://techstartup.com/careers/frontend-dev</apply_url>
+    <remote>true</remote>
+    <salary_min>120000</salary_min>
+    <salary_max>160000</salary_max>
+    <currency>USD</currency>
+  </job>
+  <job>
+    <id>sample-002</id>
+    <title>DevOps Engineer</title>
+    <company>CloudScale Solutions</company>
+    <description>
+      Join our infrastructure team to manage and scale our cloud-native applications. 
+      Experience with AWS, Kubernetes, and CI/CD pipelines required. 
+      Help us build the future of cloud computing.
+    </description>
+    <posted>2024-07-24T11:30:00Z</posted>
+    <location>Austin, TX</location>
+    <employment_type>Full-time</employment_type>
+    <apply_url>https://cloudscale.com/jobs/devops</apply_url>
+    <remote>false</remote>
+    <salary_min>130000</salary_min>
+    <salary_max>180000</salary_max>
+    <currency>USD</currency>
+  </job>
+  <job>
+    <id>sample-003</id>
+    <title>Product Marketing Manager</title>
+    <company>GrowthCorp</company>
+    <description>
+      Lead product marketing initiatives for our SaaS platform. 
+      Develop go-to-market strategies, create compelling content, 
+      and work closely with sales and product teams.
+    </description>
+    <posted>2024-07-24T09:15:00Z</posted>
+    <location>New York, NY</location>
+    <employment_type>Full-time</employment_type>
+    <apply_url>https://growthcorp.com/careers/product-marketing</apply_url>
+    <remote>true</remote>
+    <salary_min>90000</salary_min>
+    <salary_max>120000</salary_max>
+    <currency>USD</currency>
+  </job>
+</jobs>
